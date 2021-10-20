@@ -1,0 +1,22 @@
+﻿@model List<SolicitudCompra>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Solicitudes</h1>
+
+    @if(Model.Count == 0){
+        <p>No hay solicitudes..</p>
+    }
+
+    @foreach (var solicitud in Model)
+    {
+        if(solicitud.Producto == null){
+            <p>No se registro solicitudes.</p>
+        }else{
+            <p>Motivo de solicitud (@solicitud.Producto - @solicitud.Precio  - @solicitud.Fecha)</p>
+        }
+        
+    }
+</div>
